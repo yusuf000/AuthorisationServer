@@ -31,7 +31,8 @@ public class SpringSecurityConfiguration {
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests.anyRequest().authenticated())
                 .httpBasic(withDefaults())
                 .csrf(AbstractHttpConfigurer::disable);
-        return http.build();
+        return http.oauth2ResourceServer((oauth2) -> oauth2
+                .jwt(Customizer.withDefaults())).build();
 
     }
 
