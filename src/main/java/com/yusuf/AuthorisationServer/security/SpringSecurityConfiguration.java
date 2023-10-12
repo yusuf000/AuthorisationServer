@@ -27,6 +27,7 @@ import static org.springframework.security.config.Customizer.withDefaults;
 public class SpringSecurityConfiguration {
 
 
+
     @Value("${spring.security.oauth2.resourceserver.jwt.issuer-uri}")
     String issuerUri;
     @Bean
